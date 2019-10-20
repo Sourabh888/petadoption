@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="signup.css">
+    <style>
+       input[type="Email"]::placeholder { /* Firefox, Chrome, Opera */ 
+    color: blue; 
+} 
+    </style>
+    <script>
+            function validateForm() {
+                    var x = document.forms["myForm"]["fname"].value;
+                    if (x == "") {
+                            alert("Please Enter Your First Name");
+                     return false;
+                    }
+                    var a = document.forms["myForm"]["lastname"].value;
+                    if (a == "") {
+                    
+                        alert("Please Enter Your last Name");
+                        return false;
+                    }
+                    var c = document.forms["myForm"]["Email"].value;
+                    if (c == "") {
+                    
+                            alert("Please Enter Your Email");
+                     return false;
+                    }
+                    var e = document.forms["myForm"]["pass"].value;
+                    if (e == "") {
+                    
+                            alert("Please Enter Your Password");
+                     return false;
+                    }
+                    var p = document.forms["myForm"]["confirm"].value;
+                    if (p == "") {
+                        alert("Please Re-enter Your Password");
+                     return false;
+                    }
+                    var g = document.forms["myForm"]["phone"].value;
+                    if (g == "") {
+                    
+                            alert("Please Re-enter Your Phone Number");
+                     return false;
+                    }
+            }
+            function matchPassword(obj){
+                if(document.getElementById("password").value!=obj.value){
+                    console.log(obj.value,document.getElementById("password"));
+                    alert("password does not match");
+                }
+            }
+        </script>
+
+</head>
+
+<body>
+    <div class="Signup">
+            <form name="myForm" action="/action_page.php" method="post" onsubmit="return validateForm()" >
+            <h1 style="color:white"> Sign up </h><br>
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" name="fname" placeholder="First Name"  pattern="[A-Z][a-zA-Z][^#&<>\~;$^%{}?]{1,20}$ "><br>
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" name="lastname" placeholder="Last Name" pattern="[A-Z][a-zA-Z][^#&<>\~;$^%{}?]{1,20}$ "><br>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <input type="text" name="Email" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" /><br>
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <input type="password" name="pass" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"> <br>
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <input type="password" name="confirm" placeholder="Confirm Password" onblur="matchPassword(this)" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <input type="text" placeholder="phone number" name="phone" pattern="[789][0-9]{9}"><br>
+            <br><input type="submit" value="PetMatch Me!">
+        </form>
+    </div>
+</body>
+
+</html>

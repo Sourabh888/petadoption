@@ -1,0 +1,43 @@
+<html>
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="login.css">
+        <script>
+                function validateForm() {
+                        var x = document.forms["myForm"]["email"].value;
+                        if (x == "") {
+                                alert("Please Enter Email");
+                         return false;
+                        }
+                        var y = document.forms["myForm"]["psw"].value;
+                        if (y == "") {
+                                alert("Please Enter Password");
+                                return false;
+                        }
+                }
+        </script>
+</head>
+
+<body id="body">
+        <div class="container">
+                <div class="loginbox">
+                        <h1 id="login-font">Login</h1>
+                        <form name="myForm" action="/action_page.php" method="post" onsubmit="return validateForm()" >
+                                <p>Email</p>
+                                <input type="text" name="email" placeholder="Enter Username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                                <p>Password</p>
+                                <input type="password" id="psw" name="psw" placeholder="Enter Password"
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" >
+                                <input type="submit" value="Submit">
+                               
+                                <a href="signup.html">Make an account</a><br>
+                                <a href="pass.html">Forgot Password</a>
+                        </form>
+                </div>
+        </div>
+        
+
+</body>
+
+</html>

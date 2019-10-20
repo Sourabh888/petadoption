@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <link href="pass.css" rel="stylesheet">
+    <script>
+    function validateForm() {
+        var x = document.forms["myForm"]["email"].value;
+        if (x == "") {
+                alert("Please Enter Email");
+         return false;
+        }
+        else{
+            alert("OTP has been send to "+x);
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="for">
+
+
+
+        <h>Please Enter your registered email address below and we will send you information to change password</h>
+        <form name="myForm" action="/action_page.php" method="post" onsubmit="return validateForm()" >
+            <br>
+            <br<br><i class="fa fa-envelope" aria-hidden="true"></i>
+                <input type="text" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" /><br>
+                <br>
+                <button type="submit">Send OTP</button><br><br>
+        </form>
+    </div>
+</body>
+
+</html>
